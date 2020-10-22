@@ -50,20 +50,21 @@
 }
 .timer > div {
   padding: 10px;
-  background: #444;
   color: #fff;
-  font-size: 30px;
+  font-size: 200px;
   margin-right: 2px;
-  width: 150px;
+  width: 400px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
+
 .timer > div > span {
-  text-transform: uppercase;
   color: #999;
-  font-size: 20px;
+  font-size: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .expired {
   font-size: 20px;

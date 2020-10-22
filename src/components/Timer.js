@@ -63,19 +63,19 @@ class Timer extends Component {
       <div className="timer">
         <div>
           {days}
-          <span>days</span>
+          <span>Days</span>
         </div>
         <div>
           {hours}
-          <span>hours</span>
+          <span>Hours</span>
         </div>
         <div>
           {minutes}
-          <span>minutes</span>
+          <span>Min</span>
         </div>
         <div>
           {seconds}
-          <span>seconds</span>
+          <span>Sec</span>
         </div>
       </div>
     );
