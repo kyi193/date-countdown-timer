@@ -72,3 +72,13 @@
   border: 1px solid rgb(126, 49, 49);
   padding: 20px;
 }
+
+.template {
+  margin-left: 20px;
+}
+
+.templates-container {
+  justify-content: center;
+  display: inline-flex;
+  flex-direction: row;
+}
