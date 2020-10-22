@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Start-button {
+  height: 30px;
+  width: 100px
+}
