@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom'
+
 const templates = [
   {
     title: 'Wedding',
@@ -27,7 +29,14 @@ class MainMenu extends Component {
           {templates.map(template => {
             return (
               <div key={template.title} className="template">
-                <img src={template.imgSrc} alt={template.title} height={200} width={400} />
+                <Link to={{
+                  pathname: `/templates/${template.title}`,
+                  state: {
+                    imgSrc: template.imgSrc
+                  }
+                }}>
+                  <img src={template.imgSrc} alt={template.title} height={200} width={400} />
+                </Link>
                 <p>{template.title}</p>
               </div>
             )
