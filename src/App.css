@@ -61,7 +61,7 @@
 }
 
 .timer > div > span {
-  color: #E2B117;
+  color: #E2E4E7;
   font-size: 50px;
   display: flex;
   align-items: center;
@@ -160,4 +160,53 @@
   justify-content: center;
   display: flex;
   flex-direction: row;
+}
+
+.timer-header-Apocalypse {
+  background-color: #484848;
+  height: 50px;
+  width: 1000px;
+  font-size: 40px;
+  color: #EC131D;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Cinzel', serif;
+}
+
+.timer-header-Wedding {
+  background-color: black;
+  height: 50px;
+  width: 600px;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Dancing Script', cursive;
+}
+
+.timer-header-Birthday {
+  background-color: #FFBA37;
+  height: 75px;
+  width: 600px;
+  color: #5300C6;
+  border: 5px solid #5300C6;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Henny Penny'
+}
+
+.timer-header-Graduation {
+  background-color: black;
+  height: 75px;
+  width: 600px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
 }

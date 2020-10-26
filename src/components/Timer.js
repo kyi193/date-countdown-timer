@@ -61,6 +61,9 @@ class Timer extends Component {
     }
     return (
       <div className={`timer-${this.props.backgroundImg}`}>
+        <div className={`timer-header-${this.props.backgroundImg}`}>
+          Countdown until the {this.props.backgroundImg}:
+        </div>
         <div className="layer">
           <div className="timer">
             <div>
