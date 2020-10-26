@@ -32,7 +32,7 @@ class MainMenu extends Component {
                 <Link to={{
                   pathname: `/templates/${template.title}`,
                   state: {
-                    imgSrc: template.imgSrc
+                    title: template.title
                   }
                 }}>
                   <img src={template.imgSrc} alt={template.title} height={200} width={400} />

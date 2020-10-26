@@ -60,24 +60,29 @@ class Timer extends Component {
       return <div className="expired">ITS TIME!</div>;
     }
     return (
-      <div className="timer" style={{ background: `url(${this.props.backgroundImg})` }}>
-        <div>
-          {days}
-          <span>Days</span>
-        </div>
-        <div>
-          {hours}
-          <span>Hours</span>
-        </div>
-        <div>
-          {minutes}
-          <span>Min</span>
-        </div>
-        <div>
-          {seconds}
-          <span>Sec</span>
+      <div className={`timer-${this.props.backgroundImg}`}>
+        <div className="layer">
+          <div className="timer">
+            <div>
+              {days}
+              <span>Days</span>
+            </div>
+            <div>
+              {hours}
+              <span>Hours</span>
+            </div>
+            <div>
+              {minutes}
+              <span>Min</span>
+            </div>
+            <div>
+              {seconds}
+              <span>Sec</span>
+            </div>
+          </div>
         </div>
       </div>
+
     );
   }
 }
