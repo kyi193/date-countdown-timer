@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-
+import { submitParameters } from '../actions'
+import { connect } from 'react-redux'
 const templates = [
   {
     title: 'Wedding',
@@ -21,6 +22,11 @@ const templates = [
 ]
 
 class MainMenu extends Component {
+  saveTemplate = (template) => {
+    const { dispatch } = this.props
+    dispatch(submitParameters(template))
+  }
+
   render() {
     return (
       <div>
@@ -35,7 +41,8 @@ class MainMenu extends Component {
                     state: {
                       title: template.title
                     }
-                  }}>
+                  }}
+                    onClick={() => this.saveTemplate(template.title)}>
                     <img src={template.imgSrc} alt={template.title} height={200} width={400} />
                   </Link>
                 </div>
@@ -50,4 +57,4 @@ class MainMenu extends Component {
   }
 }
 
-export default MainMenu
+export default connect()(MainMenu)
