@@ -1,6 +1,7 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux'
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -26,6 +27,7 @@ class DateTimeInputField extends React.Component {
 
   render() {
     const { endDate } = this.state
+    const { title } = this.props
     return (
       <div className={"timer-container"} >
         <div>
@@ -33,7 +35,7 @@ class DateTimeInputField extends React.Component {
           <DatePicker selected={endDate} onSelect={date => this.setEndDate(date)} showTimeSelect dateFormat="Pp" fixedHeight={true} />
           <Link to={{
             pathname: `/`,
-            search: `?templateID=${this.props.location.state.title}&endDate=${endDate.getTime()}`
+            search: `?templateID=${title}&endDate=${endDate.getTime()}`
           }}>
             <StartButton />
           </Link>
@@ -43,5 +45,9 @@ class DateTimeInputField extends React.Component {
   }
 }
 
-
-export default DateTimeInputField
+function mapStateToProps(state) {
+  return {
+    title: state.template
+  }
+}
+export default connect(mapStateToProps)(DateTimeInputField)
