@@ -1,6 +1,6 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
-import Timer from './Timer'
+import { Link } from "react-router-dom";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,40 +12,32 @@ function StartButton({ onClick }) {
   )
 }
 
-function timeDiffCalc(dateFuture, dateNow) {
-  return dateFuture - dateNow
-}
-
 class DateTimeInputField extends React.Component {
   state = {
-    startDate: new Date(),
+    endDate: new Date(),
     timeRemaining: null
   }
 
-  setStartDate = (date) => {
+  setEndDate = (date) => {
     this.setState(() => ({
-      startDate: date
+      endDate: date
     }))
   }
 
-  setTimeRemaining = (timeRemaining) => {
-    this.setState(() => ({
-      timeRemaining,
-    }))
-  }
   render() {
-    const { startDate, timeRemaining } = this.state
-    const backgroundImg = this.props.location.state.title
+    const { endDate } = this.state
     return (
       <div className={"timer-container"} >
-        {timeRemaining ?
-          (<Timer startDate={startDate} backgroundImg={backgroundImg} />)
-          : (<div>
-            <p>Please enter the end date:</p>
-            <DatePicker selected={startDate} onSelect={date => this.setStartDate(date)} showTimeSelect dateFormat="Pp" fixedHeight={true} />
-            <StartButton onClick={() => this.setTimeRemaining(timeDiffCalc(new Date(`${startDate.getFullYear()}/${startDate.getMonth() + 1}/${startDate.getDate()} ${startDate.getHours()}:${startDate.getMinutes()}:${startDate.getSeconds()}`), new Date()))} />
-          </div>
-          )}
+        <div>
+          <p>Please enter the end date:</p>
+          <DatePicker selected={endDate} onSelect={date => this.setEndDate(date)} showTimeSelect dateFormat="Pp" fixedHeight={true} />
+          <Link to={{
+            pathname: `/`,
+            search: `?templateID=${this.props.location.state.title}&endDate=${endDate.getTime()}`
+          }}>
+            <StartButton />
+          </Link>
+        </div>
       </div>
     )
   }

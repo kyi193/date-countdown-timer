@@ -28,8 +28,8 @@ class MainMenu extends Component {
         <div className="templates-container">
           {templates.map(template => {
             return (
-              <div>
-                <div key={template.title} className="template">
+              <div key={template.title}>
+                <div className="template">
                   <Link to={{
                     pathname: `/templates/${template.title}`,
                     state: {
