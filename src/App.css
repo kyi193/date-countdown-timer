@@ -80,14 +80,15 @@
 }
 
 .template {
-  margin-left: 20px;
-	-webkit-transition: margin 0.2s ease-out;
-    -moz-transition: margin 0.2s ease-out;
-    -o-transition: margin 0.2s ease-out;
+  margin-left: 30px;
+	-webkit-transition: margin 0.4s ease-out;
+    -moz-transition: margin 0.4s ease-out;
+    -o-transition: margin 0.4s ease-out;
 }
 
 .template:hover {
   margin-top: -10px;
+  border: white solid 2px;
 }
 .templates-container {
   justify-content: center;
