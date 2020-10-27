@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 
 class Timer extends Component {
   constructor(props) {
@@ -53,11 +54,19 @@ class Timer extends Component {
     }
     this.setState({ days, hours, minutes, seconds, expired: false });
   };
-
   render() {
     const { days, hours, minutes, seconds, expired } = this.state;
     if (expired) {
-      return <div className="expired">ITS TIME!</div>;
+      return (
+        <div className={`timer-${this.props.backgroundImg}`}>
+          <div className="expired">IT'S TIME!</div>
+          <Link to={{
+            pathname: "/home",
+          }}>
+            Go Back
+                </Link>
+        </div>
+      )
     }
     return (
       <div className={`timer-${this.props.backgroundImg}`}>
@@ -83,7 +92,15 @@ class Timer extends Component {
               <span>Sec</span>
             </div>
           </div>
+          <div className="go-back">
+            <Link to={{
+              pathname: "/home",
+            }}>
+              Go Back
+                </Link>
+          </div>
         </div>
+
       </div>
 
     );

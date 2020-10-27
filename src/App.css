@@ -68,10 +68,15 @@
   justify-content: center;
 }
 .expired {
-  font-size: 20px;
-  color: rgb(126, 49, 49);
-  border: 1px solid rgb(126, 49, 49);
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(246, 71, 71, .85);
+  font-size: 100px;
+  color: white;
   padding: 20px;
+  height: 250px;
+  width: 100%;
 }
 
 .template {
@@ -209,4 +214,9 @@
   justify-content: center;
   flex-direction: column;
   font-family: 'Pacifico', cursive;
+}
+
+a {
+  color: #FFF;
+  background-color: black;
 }
