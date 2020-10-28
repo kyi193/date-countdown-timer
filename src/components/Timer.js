@@ -89,7 +89,7 @@ class Timer extends Component {
               {minutes}
               <span>Min</span>
             </div>
-            <div>
+            <div className="seconds">
               {seconds}
               <span>Sec</span>
             </div>
