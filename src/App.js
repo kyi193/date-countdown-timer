@@ -4,7 +4,7 @@ import './App.css';
 import DateTimeInputField from './components/DateTimeInputField'
 import MainMenu from './components/MainMenu'
 import CountdownPage from './components/CountdownPage'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from './reducers'
