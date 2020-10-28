@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class Timer extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class Timer extends Component {
   };
   render() {
     const { days, hours, minutes, seconds, expired } = this.state;
+    const { article } = this.props
     if (expired) {
       return (
         <div className={`timer-${this.props.backgroundImg}`}>
@@ -71,7 +73,7 @@ class Timer extends Component {
     return (
       <div className={`timer-${this.props.backgroundImg}`}>
         <div className={`timer-header-${this.props.backgroundImg}`}>
-          Countdown until the {this.props.backgroundImg}:
+          Countdown until {article} {this.props.backgroundImg}:
         </div>
         <div className="layer">
           <div className="timer">
@@ -106,4 +108,10 @@ class Timer extends Component {
     );
   }
 }
-export default Timer;
+
+function mapStateToProps(state) {
+  return {
+    article: state.article
+  }
+}
+export default connect(mapStateToProps)(Timer);

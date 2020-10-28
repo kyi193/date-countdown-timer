@@ -5,30 +5,35 @@ import { connect } from 'react-redux'
 const templates = [
   {
     title: 'Wedding',
-    imgSrc: require('../assets/images/wedding.jpg')
+    imgSrc: require('../assets/images/wedding.jpg'),
+    article: "the"
   },
   {
     title: 'Birthday',
-    imgSrc: require('../assets/images/birthday.jpg')
+    imgSrc: require('../assets/images/birthday.jpg'),
+    article: "the"
   },
   {
     title: 'Graduation',
-    imgSrc: require('../assets/images/graduation.jpg')
+    imgSrc: require('../assets/images/graduation.jpg'),
+    article: "the"
   },
   {
     title: 'Apocalypse',
-    imgSrc: require('../assets/images/apocalypse.jpg')
+    imgSrc: require('../assets/images/apocalypse.jpg'),
+    article: "the"
   },
   {
     title: 'Halloween',
-    imgSrc: require('../assets/images/halloween.jpg')
+    imgSrc: require('../assets/images/halloween.jpg'),
+    article: "it's"
   }
 ]
 
 class MainMenu extends Component {
-  saveTemplate = (template) => {
+  saveTemplate = (template, article) => {
     const { dispatch } = this.props
-    dispatch(submitParameters(template))
+    dispatch(submitParameters(template, article))
   }
 
   render() {
@@ -46,7 +51,7 @@ class MainMenu extends Component {
                       title: template.title
                     }
                   }}
-                    onClick={() => this.saveTemplate(template.title)}>
+                    onClick={() => this.saveTemplate(template.title, template.article)}>
                     <img src={template.imgSrc} alt={template.title} height={200} width={400} />
                   </Link>
                 </div>

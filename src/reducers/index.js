@@ -3,6 +3,7 @@ const reducer = (state = {}, action) => {
   switch (action.type) {
     case SUBMIT_TEMPLATE: {
       state['template'] = action.template
+      state['article'] = action.article
       return state
     }
     default:
