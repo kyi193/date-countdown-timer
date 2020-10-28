@@ -18,6 +18,10 @@ const templates = [
   {
     title: 'Apocalypse',
     imgSrc: require('../assets/images/apocalypse.jpg')
+  },
+  {
+    title: 'Halloween',
+    imgSrc: require('../assets/images/halloween.jpg')
   }
 ]
 
@@ -29,7 +33,7 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <h2>Choose your countdown template:</h2>
         <div className="templates-container">
           {templates.map(template => {
