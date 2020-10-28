@@ -19,8 +19,8 @@ class App extends React.Component {
           <Router>
             <header className="App-header">
               <div>
-                <Route exact path='/' component={CountdownPage} />
-                <Route exact path='/home' component={MainMenu} />
+                <Route exact path='/' component={MainMenu} />
+                <Route exact path='/home' component={CountdownPage} />
                 <Route exact path='/templates/:templateID' component={DateTimeInputField} />
               </div>
             </header>
